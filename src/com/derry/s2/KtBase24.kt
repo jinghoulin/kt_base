@@ -5,7 +5,7 @@ fun main() {
     // 我们现在在写函数
 
     // 第一步：函数的输入输出的声明。这个变量名（lambda的声明）只是对函数的描述
-    val methodAction : () -> String
+    val methodAction: () -> String
     // lambda表达式语法：(parameters) -> {statements} 实现时当一个参数时可以省略()，当一条语句时可以省略{}
 
     // 第二步：对上面函数的实现

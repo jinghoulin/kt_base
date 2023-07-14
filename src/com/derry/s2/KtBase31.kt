@@ -42,7 +42,7 @@ public inline fun loginAPI3(username: String, userpwd: String, responseResult: (
 
 // 此函数没有使用lambda作为参数，就不需要声明成内联
 // 登录的API暴露者 服务器
-fun wbeServiceLoginAPI3(name: String, pwd: String) : Boolean {
+fun wbeServiceLoginAPI3(name: String, pwd: String): Boolean {
     // kt的if是表达式(很灵活)     java的if是语句(有局限性)
 
     // 做很多的事情 登录逻辑处理

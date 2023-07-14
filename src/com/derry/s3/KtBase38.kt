@@ -2,7 +2,7 @@ package com.derry.s3
 
 // TODO 38.Kotlin语言中的非空断言操作符特点
 fun main() {
-   var name: String? = null
+    var name: String? = null
 
     // name.capitalize() // name是可空类型的 可能是null，想要使用name，必须给出补救措施
 

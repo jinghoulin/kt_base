@@ -6,7 +6,7 @@ fun main() {
 }
 
 private fun show(number: Int) {
-    when(number) {
+    when (number) {
         -1 -> TODO("没有这种分数")// 可以终止行为执行下去，抛出一个异常
         // Java的todo不同。这个TODO是个函数会throw NotImplementedError，并返回Nothing类型
         in 0..59 -> println("分数不及格")

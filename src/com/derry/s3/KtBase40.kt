@@ -6,7 +6,8 @@ fun main() {
     // info = null
 
     // 空合并操作符  xxx ?: "原来你是null啊"    "如果xxx等于null，就会执行 ?: 后面的区域"
-    println( info ?: "原来你是null啊" )
+    println(info ?: "原来你是null啊")
+    // 与 ?. 相反，?. 是前面为null则不执行后面，?: 是前面为null则执行后面
 
 
     // let函数 + 空合并操作符

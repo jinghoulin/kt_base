@@ -2,6 +2,8 @@ package com.derry.s3
 
 // TODO 39.Kotlin语法中对比使用if判断null值情况
 fun main() {
+    // ?(补救措施1)，    !!(补救措施2)        if判空(补救措施3)
+
     var name: String? = null
     name = "DDD"
 

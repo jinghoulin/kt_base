@@ -8,7 +8,7 @@ interface IShowResult { // 接口的折中方案 解决 kt的lambda问题
 public class KtBase34 {
 
     public static void main(String[] args) { // psv
-        // 匿名函数 - 匿名接口实现
+        // kt中的匿名函数相当于 - 匿名接口实现
         showPersonInfo("lisi", 99, 'm', "study cpp", new IShowResult() {
             @Override
             public void result(String result) {
@@ -16,12 +16,12 @@ public class KtBase34 {
             }
         });
 
-        // 具名函数 - 具名接口实现 showResultImpl
+        // kt中的具名函数相当于 - 具名接口实现 showResultImpl
         IShowResult showResultImpl = new MshowResultImpl();
         showPersonInfo("wangwu", 88, 'n', "study kt", showResultImpl);
     }
 
-   static class MshowResultImpl implements IShowResult {
+    static class MshowResultImpl implements IShowResult {
 
         @Override
         public void result(String result) {

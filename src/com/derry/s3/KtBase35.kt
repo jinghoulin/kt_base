@@ -12,8 +12,9 @@ fun main() {
     println(name)
 
     // TODO 第二种情况：声明时指定为可空类型
-    var name2: String ?
+    var name2: String?
     name2 = null
     // name2 = "Derry"
     println(name2)
+    println("name的长度:${name2?.length}") // ? 如果name2真的是null，就不执行 ?后面的区域.length}
 }

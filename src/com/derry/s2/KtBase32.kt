@@ -7,9 +7,10 @@ fun main() {
 
     // login("Derry2", "123456", ::methodResponseResult)
 
+    // 因此函数类型的对象也可以用变量传递
     val obj = ::methodResponseResult
     val obj2 = obj
-    val obj3 =  obj2
+    val obj3 = obj2
 
     login("Derry", "123456", obj3)
 }
@@ -21,7 +22,7 @@ fun methodResponseResult(msg: String, code: Int) {
 
 // 模拟：数据库SQLServer
 const val USER_NAME_SAVE_DB4 = "Derry"
-const val USER_PWD_SAVE_DB4= "123456"
+const val USER_PWD_SAVE_DB4 = "123456"
 
 inline fun login(name: String, pwd: String, responseResult: (String, Int) -> Unit) {
     if (USER_NAME_SAVE_DB4 == name && USER_PWD_SAVE_DB4 == pwd) {

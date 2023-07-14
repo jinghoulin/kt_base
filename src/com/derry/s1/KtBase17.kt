@@ -9,8 +9,8 @@ fun main() {
     action03("赵六", 76)
 }
 
-    // java的解决是： 是用 建造者设计模式 你自己去builder 我不管了
-    // KT中解决可以用：默认参数 也可以 建造者设计模式
+// java的解决是： 是用 建造者设计模式 你自己去builder 我不管了
+// KT中解决可以用：默认参数 也可以 建造者设计模式
 
 private fun action01(name: String, age: Int) {
     println("我的姓名是:$name, 我的年龄是:$age")

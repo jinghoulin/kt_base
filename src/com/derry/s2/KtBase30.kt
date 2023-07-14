@@ -3,7 +3,7 @@ package com.derry.s2
 // TODO 30.Kotlin语言的简略写法学习
 fun main() {
     // 第一种方式
-    loginAPI2("Derry", "123456", { msg: String, code:Int ->
+    loginAPI2("Derry", "123456", { msg: String, code: Int ->
         println("最终登录的情况如下: msg:$msg, code:$code")
     })
 
@@ -47,7 +47,7 @@ public fun loginAPI2(username: String, userpwd: String, responseResult: (String,
 }
 
 // 登录的API暴露者 服务器
-private fun wbeServiceLoginAPI2(name: String, pwd: String) : Boolean {
+private fun wbeServiceLoginAPI2(name: String, pwd: String): Boolean {
     // kt的if是表达式(很灵活)     java的if是语句(有局限性)
 
     // 做很多的事情 登录逻辑处理

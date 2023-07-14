@@ -10,7 +10,7 @@ fun main() {
 
     // (Any? 或 Any) == java Object
 
-    val info = when(week) {
+    val info = when (week) {
         1 -> "今天是星期一，非常忙碌的一天开会"
         2 -> "今天是星期二，非常辛苦的写需求"
         3 -> "今天是星期三，努力写Bug中"

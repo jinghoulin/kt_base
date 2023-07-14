@@ -1,24 +1,21 @@
 package com.derry.s3
 
-import java.lang.Exception
-import java.lang.IllegalArgumentException
-
 // TODO 41.在Kotlin语法中异常处理与自定义异常特点
 fun main() {
-   try {
-       var info: String? = null
+    try {
+        var info: String? = null
 
-       checkException(info)
+        checkException(info)
 
-       println(info!!.length)
+        println(info!!.length)// 同学们思考下：为什么我敢写断言，因为到 12行的时候，明确保证绝对有值
 
-   }catch (e: Exception) {
-       println("啊呀:$e")
-   }
+    } catch (e: Exception) {
+        println("啊呀:$e")
+    }
 }
 
 fun checkException(info: String?) {
-   info ?: throw CustomException()
+    info ?: throw CustomException()
 }
 
 class CustomException : IllegalArgumentException("你的代码太不严谨了")
