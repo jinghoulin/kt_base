@@ -13,8 +13,9 @@ fun main() {
 
     // 结论：用 roundToInt()函数，保证 Double ->转Int 持有四舍五入的效果
 
+    // 补充知识
     // r的类型： String
-    val r  = "%.3f".format(65.8343433)
+    val r = "%.3f".format(65.8343433)
     println(r)
 
 }

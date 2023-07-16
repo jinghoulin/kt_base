@@ -20,9 +20,9 @@ fun main() {
         length
     }) {
         "你的字符串长度是:$this"
-    }){
+    }) {
         "【$this】"
-    }){
+    }) {
         println(this)
     }
 }

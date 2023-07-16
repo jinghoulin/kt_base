@@ -8,7 +8,7 @@ package com.derry.s3
 // 5.具名函数输出内容
 fun main() {
     val str = "Derry is OK"
-    val r1 : Float = str.run {
+    val r1: Float = str.run {
         // this == str本身
         true
         5435.5f
@@ -36,9 +36,9 @@ fun main() {
 
     // let函数持有it，run函数持有this 都可以很灵活的，把上一个结果值 自动给 下一个函数
     str.let(::isLong) // it == str本身
-    .let(::showText) // it == isLong返回的boolean值
-    .let(::mapText) // it == str本身
-    .let(::println) // it == str本身
+        .let(::showText) // it == isLong返回的boolean值
+        .let(::mapText) // it == str本身
+        .let(::println) // it == str本身
 
     println()
 

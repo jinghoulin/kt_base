@@ -32,14 +32,15 @@ fun main() {
 }
 
 // 普通方式 对值判null，并返回
-fun getMethod1(value: String?) : String {
+fun getMethod1(value: String?): String {
     return if (value == null) "你传递的内容是null，你在搞什么飞机" else "欢迎回来${value}非常欢迎"
 }
+
 // 普通方式 简化版本
 fun getMethod2(value: String?) = if (value == null) "你传递的内容是null，你在搞什么飞机" else "欢迎回来${value}非常欢迎"
 
 // let方式 + 空合并操作符 对值判null，并返回
-fun getMethod3(value: String?) : String {
+fun getMethod3(value: String?): String {
     return value?.let {
         "欢迎回来${it}非常欢迎"
     } ?: "你传递的内容是null，你在搞什么飞机"
@@ -47,7 +48,7 @@ fun getMethod3(value: String?) : String {
 
 // let方式 + 空合并操作符 对值判null，并返回 简化版本
 fun getMethod4(value: String?) =
-     value?.let {
+    value?.let {
         "欢迎回来${it}非常欢迎"
     } ?: "你传递的内容是null，你在搞什么飞机"
 

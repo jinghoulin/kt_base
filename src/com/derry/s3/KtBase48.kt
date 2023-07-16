@@ -5,11 +5,11 @@ fun main() {
     val number: Int = "666".toInt()
     println(number)
 
-    // 字符串里面放入了Double类型，无法转换成Int，会奔溃
+    // 字符串里面放入了Double类型，无法转换成Int，会崩溃
     // val number2: Int = "666.6".toInt()
     // println(number2)
 
-    // 解决什么奔溃的问题
+    // 解决上面崩溃的问题
     val number2: Int? = "666.6".toIntOrNull()
     println(number2)
 
