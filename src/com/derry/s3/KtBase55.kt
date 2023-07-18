@@ -22,16 +22,16 @@ fun main() {
 }
 
 // 前端
-public fun checkPermissionAction(name: String, pwd: String) : String? {
+public fun checkPermissionAction(name: String, pwd: String): String? {
     return name.takeIf { permissionSystem(name, pwd) }
 }
 
 // takeIf + 空合并操作符
-public fun checkPermissionAction2(name: String, pwd: String) : String {
+public fun checkPermissionAction2(name: String, pwd: String): String {
     return name.takeIf { permissionSystem(name, pwd) } ?: "你的权限不够"
 }
 
 // 权限系统
-private fun permissionSystem(username: String, userpwd: String) : Boolean {
-    return if (username == "Root" && userpwd == "!@#$") true  else false
+private fun permissionSystem(username: String, userpwd: String): Boolean {
+    return if (username == "Root" && userpwd == "!@#$") true else false
 }

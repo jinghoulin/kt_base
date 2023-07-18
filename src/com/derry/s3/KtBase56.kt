@@ -21,6 +21,7 @@ class Manager {
 fun main() {
     val manager = Manager()
 
+    // 补充点：it是调用者本身
     /*
     "Derry".takeIf { *//*it == "Derry"*//* }
     "Derry".takeUnless { *//*it == "Derry"*//* }
@@ -29,6 +30,6 @@ fun main() {
     // manager.setInfoValue("AAA")
 
     // 小结：takeUnless+it.isNullOrBlank() 一起使用，可以验证字符串有没有初始化等功能
-    val r  = manager.getInfoValue().takeUnless { it.isNullOrBlank() } ?: "未经过任何初始化值"
+    val r = manager.getInfoValue().takeUnless { it.isNullOrBlank() } ?: "未经过任何初始化值"
     println(r)
 }

@@ -7,14 +7,14 @@ import java.io.File
 fun main() {
     val str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-    val r1 : String = str.also {
+    val r1: String = str.also {
         true
         354543.4f
         454
         'C'
     }
 
-    val r2 : Int = 123.also {
+    val r2: Int = 123.also {
         true
         354543.4f
         454
@@ -41,7 +41,7 @@ fun main() {
 
     // 匿名函数里面做的事情，和sourceFile无关，因为永远都是返回 file本身
     val sourceFile = file.also {
-        file.setReadable(true)
+        it.setReadable(true)// it就是file
         file.setWritable(true)
         println(file.readLines())
         // 假设 做了很多很多的事情
