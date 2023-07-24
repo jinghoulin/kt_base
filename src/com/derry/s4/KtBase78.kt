@@ -11,7 +11,7 @@ class KtBase78 {
     }
 
     fun showResponseResult() {
-        // 由于你没有给他初始化，所以只有用到它，就奔溃
+        // 由于你没有给他初始化，所以只有用到它，就崩溃
         // if (responseResultInfo == null) println()
         // println("responseResultInfo:$responseResultInfo")
 

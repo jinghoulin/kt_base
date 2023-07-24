@@ -33,7 +33,7 @@ fun main() {
     println(p.showObj(2))
     println(p.showObj(3))
     println(p.showObj(4)) // 4554.54
-    println(p.showObj(5)/*?.特殊操作 如果是null 会引发奔溃*/) // null
+    println(p.showObj(5)/*?.特殊操作 如果是null 会引发崩溃*/) // null
     println(p.showObj(6)) // C
 
     println()

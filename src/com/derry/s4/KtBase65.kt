@@ -14,19 +14,19 @@ import java.io.File
     BooleanArray    booleanArrayOf
     Array<对象类型>           arrayOf         对象数组
 */
-// 1.intArrayOf 常规操作的越界奔溃
+// 1.intArrayOf 常规操作的越界崩溃
 // 2.elementAtOrElse elementAtOrNull
 // 3.List集合转 数组
 // 4.arrayOf Array<File>
 fun main() {
-    // 1.intArrayOf 常规操作的越界奔溃
+    // 1.intArrayOf 常规操作的越界崩溃
     val intArray /*: IntArray*/ = intArrayOf(1, 2, 3, 4, 5)
     println(intArray[0])
     println(intArray[1])
     println(intArray[2])
     println(intArray[3])
     println(intArray[4])
-    // println(intArray[5]) // 奔溃：会越界异常
+    // println(intArray[5]) // 崩溃：会越界异常
 
     println()
 
@@ -46,6 +46,6 @@ fun main() {
     val charArray /*: CharArray*/ = listOf('A', 'B', 'C').toCharArray()
     println(charArray)
 
-    // 4.arrayOf Array<File>
+    // 4.arrayOf Array<File>    用于对象类型的数组
     val objArray /*: Array<File>*/ = arrayOf(File("AAA"), File("BBB"), File("CCC"))
 }

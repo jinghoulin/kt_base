@@ -21,7 +21,7 @@ class KtBase112 {
         // return randomObj.takeIf { it is T } as T ?: null     :T? {
 
         // T  与  T?  是不同的 ？
-        // 答： it is T false  takeIf  null    null as T 奔溃了，解决思路： null as T?
+        // 答： it is T false  takeIf  null    null as T 崩溃了，解决思路： null as T?
 
         // 如果  it随机产生的对象 等于 T类型的，就会走 as T 直接返回了
         return randomObj.takeIf { it is T } as T?  // null as T     null as T?

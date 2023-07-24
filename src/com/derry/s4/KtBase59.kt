@@ -5,7 +5,7 @@ package com.derry.s4
 // 2.removeIf
 fun main() {
     // 1.mutator += -= 操作
-    val list : MutableList<String> = mutableListOf("Derry", "DerryAll", "DerryStr", "Zhangsan")
+    val list: MutableList<String> = mutableListOf("Derry", "DerryAll", "DerryStr", "Zhangsan")
     list += "李四" // mutator的特性 +=  -+ 其实背后就是 运算符重载而已
     list += "王五"
     list -= "Derry"

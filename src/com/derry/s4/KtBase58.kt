@@ -18,8 +18,8 @@ fun main() {
     // list2.add
     // list2.remove
 
-    val list3 : MutableList<Int> = list2.toMutableList()
-    // 可变的集合，可以完成可变的操作
+    val list3: MutableList<Int> = list2.toMutableList()
+    // 可变的集合，可以完成可变的操作(增加，删除 操作等)
     list3.add(111)
     list3.remove(123)
     println(list3)
@@ -32,7 +32,11 @@ fun main() {
     println(list4)
 
     val list5: List<Char> = list4.toList()
-    // 不可以的集合，无法完成可变的操作
+    // 不可变的集合，无法完成可变的操作
     /*list5.add
     list5.remove*/
+
+    // 小结：KT语言中，分为 可变集合  与  不可变集合
+    // Kotlin更加推荐你用   不可变集合（只读的），val（只读的）  这样数据更安全 只读的
+    // 除非万不得已，要修改，才使用 可变集合 或 var
 }

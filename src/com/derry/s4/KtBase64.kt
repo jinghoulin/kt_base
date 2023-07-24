@@ -6,7 +6,7 @@ package com.derry.s4
 // 3.List 转 Set 转 List 也能去重
 // 4.快捷函数去重 distinct
 fun main() {
-   val list : MutableList<String> = mutableListOf("Derry", "Derry", "Derry", "Leo", "Lance") // list 可以重复元素
+    val list: MutableList<String> = mutableListOf("Derry", "Derry", "Derry", "Leo", "Lance") // list 可以重复元素
     println(list)
 
     // List 转 Set 去重
@@ -18,6 +18,6 @@ fun main() {
     println(list2)
 
     // 快捷函数去重 distinct
-    println(list.distinct()) // 内部做了：先转变成 可变的Set结合  在转换成 List集合
-    println(list.toMutableSet().toList()) // 和上面代码等价
+    println(list.distinct()) // 内部做了：先转变成 可变的MutableSet结合  在转换成 List集合
+    println(list.toMutableSet().toList()) // 上面代码的实现原理
 }

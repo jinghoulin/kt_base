@@ -2,7 +2,7 @@ package com.derry.s4
 
 // TODO 57.Kotlin语言的List创建与元素获取学习
 // 普通取值方式：    索引
-// 防止奔溃取值方式： getOrElse getOrNull
+// 防止崩溃取值方式： getOrElse getOrNull
 fun main() {
     val list = listOf("Derry", "Zhangsan", "Lisi", "Wangwu")
 
@@ -11,15 +11,15 @@ fun main() {
     println(list[1])
     println(list[2])
     println(list[3])
-    // println(list[4]) // 奔溃  java.lang.ArrayIndexOutOfBoundsException: 4
+    // println(list[4]) // 崩溃  java.lang.ArrayIndexOutOfBoundsException: 4
 
     println()
 
     // 我们写KT代码，一定不会再出现，空指针异常，下标越界异常
-    // 防止奔溃取值方式： getOrElse getOrNull
-    println(list.getOrElse(3) {"越界"})
-    println(list.getOrElse(4) {"你越界了"})
-    println(list.getOrElse(4402) {"你越界了啊"})
+    // 防止崩溃的取值方式： getOrElse getOrNull
+    println(list.getOrElse(3) { "越界" })
+    println(list.getOrElse(4) { "你越界了" })
+    println(list.getOrElse(4402) { "你越界了啊" })
 
     println()
 
