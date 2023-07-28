@@ -55,18 +55,18 @@ class KtBase70 {
 
 // TODO 70.Kotlin语言的定义类与field关键字学习
 fun main() {
-    // 背后隐式代码：new KtBase70().setName("Kevin");
+    // 背后隐式代码：(new KtBase70()).setName("Kevin");
     KtBase70().name = "Kevin"
-    // 背后隐式代码：System.out.println(new KtBase70().getName());
+    // 背后隐式代码：System.out.println((new KtBase70()).getName());
     println(KtBase70().name)
 
 
     println(">>>>>>>>>>>>>>>>>>")
 
 
-    // 背后隐式代码：System.out.println(new KtBase70().getInfo());
+    // 背后隐式代码：System.out.println((new KtBase70()).getInfo());
     println(KtBase70().info)
 
-    // 背后隐式代码：new KtBase70().setInfo("学习KT");
+    // 背后隐式代码：(new KtBase70()).setInfo("学习KT");
     KtBase70().info = "学习KT"
 }

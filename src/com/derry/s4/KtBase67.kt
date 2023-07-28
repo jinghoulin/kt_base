@@ -6,7 +6,7 @@ package com.derry.s4
 // 方式三 getOrElse
 // 方式四 与Java一样 会崩溃
 fun main() {
-    val mMap /*: Map<String, Int>*/ = mapOf("Derry" to 123,"Kevin" to 654)
+    val mMap /*: Map<String, Int>*/ = mapOf("Derry" to 123, "Kevin" to 654)
 
     // 方式一 [] 找不到会返回null
     println(mMap["Derry"]) // 背后对[] 运算符重载了
@@ -21,14 +21,14 @@ fun main() {
     println(mMap.getOrDefault("Derry2", -1))
 
     // 方式三 getOrElse
-    println(mMap.getOrElse("Derry") {-1})
-    println(mMap.getOrElse("Derry2") {-1})
+    println(mMap.getOrElse("Derry") { -1 })
+    println(mMap.getOrElse("Derry2") { -1 })
 
     println()
 
     // 方式四 getValue 与Java一样 会崩溃  尽量不要使用此方式
     println(mMap.getValue("Derry"))
-    println(mMap.getValue("XXX"))
+    println(mMap.getValue("XXX"))// 崩溃
 
     // map获取内容，尽量使用 方式二 方式三
 }

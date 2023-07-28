@@ -16,10 +16,9 @@ class KtBase73 (_name: String, _sex: Char, _age: Int, _info: String)
 
  */
 
-// var name: String  就相当于  var name = _name  这不过你看不到而已
-// 一步到位，不像我们上一篇是分开写的
-class KtBase73 (var name: String, val sex: Char, val age: Int, var info: String)
-{
+// var name: String  就相当于  var name = _name  只不过你看不到而已
+// 一步到位，不像我们上一篇是分开写的。一般是这样写的
+class KtBase73(var name: String, val sex: Char, val age: Int, var info: String) {
     fun show() {
         println(name)
         println(sex)

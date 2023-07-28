@@ -22,7 +22,7 @@ fun main() {
 
     println()
 
-    // 第三种方式：
+    // 第三种方式：(key, value)
     map.forEach { (k /*: String*/, v /*: Int*/) ->
         println("key:$k, value:$v")
     }

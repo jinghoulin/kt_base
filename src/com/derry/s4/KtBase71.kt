@@ -1,7 +1,7 @@
 package com.derry.s4
 
 class KtBase71 {
-    val number : Int = 0
+    val number: Int = 0
     /* 背后的代码：
 
        private int number = 0;
@@ -13,7 +13,7 @@ class KtBase71 {
      */
 
     // 计算属性  下面这样写 get函数覆盖了 field 内容本身，相当于field失效了，无用了，以后用不到了
-    val number2 : Int
+    val number2: Int
         get() = (1..1000).shuffled().first() // 从1到1000取出随机值 返回给 getNumber2()函数
     /*
         背后隐式代码：
@@ -26,10 +26,10 @@ class KtBase71 {
        }
      */
 
-    var info: String ? = null // ""
+    var info: String? = null // ""
 
     // 防范竞态条件  当你调用成员，这个成员，可能为null，可能为空值，就必须采用 防范竞态条件，这个是KT编程的规范化
-    fun getShowInfo() : String {
+    fun getShowInfo(): String {
 
         // 这个成员，可能为null，可能为空值，就启用 防范竞态条件
         // 这种写法，就属于 防范竞态条件，我们可以看到专业的KT开发者，有大量这种代码
@@ -46,7 +46,7 @@ class KtBase71 {
 
 // TODO 71.Kotlin语言的 计算属性 与 防范竞态条件
 fun main() {
-    // 背后隐式代码：System.out.println(new KtBase71().getNumber());
+    // 背后隐式代码：System.out.println((new KtBase71()).getNumber());
     println(KtBase71().number)
 
     // 背后隐式代码：new KtBase71().setNumber(9);

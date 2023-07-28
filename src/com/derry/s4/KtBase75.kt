@@ -13,7 +13,12 @@ class KtBase75(name: String = "李元霸") // 主构造
     }
 
     // 4个参数的次构造函数，必须要调用主构造函数
-    constructor(name: String = "李俊", sex: Char = 'W', age: Int = 87, info: String = "还在学校新开发语言") : this(name) {
+    constructor(
+        name: String = "李俊",
+        sex: Char = 'W',
+        age: Int = 87,
+        info: String = "还在学习新开发语言"
+    ) : this(name) {
         println("4个参数的次构造函数 name:$name, sex:$sex, age:$age, info:$info")
     }
 }
