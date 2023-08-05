@@ -2,11 +2,11 @@ package com.derry.s4
 
 class KtBase79 {
 
-    // >>>>>>>>>>>>>>>>>>> 下面是 不使用惰性初始化 by lazy  普通方式(饿汉式 没有任何懒加载的特点)
+    // >>>>>>>>>>>>>>>>>>> 下面是 不使用惰性初始化 by lazy  普通方式(饿汉式，创建对象就会赋值，没有任何懒加载的特点)
     // val databaseData1 = readSQlServerDatabaseAction()
 
-    // >>>>>>>>>>>>>>>>>>> 使用惰性初始化 by lazy  普通方式
-    val databaseData2 by lazy { readSQlServerDatabaseAction() }
+    // >>>>>>>>>>>>>>>>>>> 使用惰性初始化 by lazy
+    val databaseData2 by lazy { readSQlServerDatabaseAction() }// 在被使用的时候才会赋值
 
     private fun readSQlServerDatabaseAction(): String {
         println("开始读取数据库数据中....")
@@ -42,7 +42,7 @@ fun main() {
     println("最终显示:${p.databaseData1}")*/
 
 
-    // >>>>>>>>>>>>>>>>>>> 使用惰性初始化 by lazy  普通方式
+    // >>>>>>>>>>>>>>>>>>> 使用惰性初始化 by lazy
     val p = KtBase79()
 
     Thread.sleep(5000)

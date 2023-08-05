@@ -2,7 +2,7 @@ package com.derry.s4
 
 class KtBase78 {
 
-    // lateinit val AAA; // AAA 无法后面在修改了，我还怎么延时初始化？
+    // lateinit val AAA; // AAA val无法后面在修改了，我还怎么延时初始化？
     lateinit var responseResultInfo: String // 我等会儿再来初始化你，我先定义再说，所以没有赋值
 
     // 模拟服务器加载
@@ -11,10 +11,11 @@ class KtBase78 {
     }
 
     fun showResponseResult() {
-        // 由于你没有给他初始化，所以只有用到它，就崩溃
+        // 由于你没有给他初始化，所以只要用到它，就崩溃
         // if (responseResultInfo == null) println()
         // println("responseResultInfo:$responseResultInfo")
 
+        // lateinit是否已经初始化。::是引用其类型，这里是LateInit.kt
         if (::responseResultInfo.isInitialized) {
             println("responseResultInfo:$responseResultInfo")
         } else {
