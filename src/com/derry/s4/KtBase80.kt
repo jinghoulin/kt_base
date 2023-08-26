@@ -4,6 +4,7 @@ class KtBase80 {
 
     var number = 9
 
+    // 成员number的声明要在init使用它之前
     init {
         number = number.times(9)
     }

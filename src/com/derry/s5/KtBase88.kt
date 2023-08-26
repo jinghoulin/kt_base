@@ -17,8 +17,8 @@ open class KtBase88 {
 // 3.具名实现方式
 // 4.对Java的接口 用对象表达式方式
 fun main() {
-    // 匿名对象 表达式方式
-    val p : KtBase88 = object : KtBase88() {
+    // "object:" 是 匿名对象 表达式方式
+    val p: KtBase88 = object : KtBase88() {
 
         override fun add(info: String) {
             // super.add(info)
@@ -39,7 +39,7 @@ fun main() {
     p2.add("刘一")
     p2.del("刘二")
 
-    // 对Java的接口 用   KT[对象表达式方式]  方式一
+    // 实现Java的接口 用   KT[对象表达式方式]  方式一
     val p3 = object : Runnable {
         override fun run() {
             println("Runnable run ...")
@@ -47,20 +47,20 @@ fun main() {
     }
     p3.run()
 
-    // 对Java的接口 用   Java最简洁的方式 方式二
+    // 实现Java的接口 用   Java最简洁的方式 方式二
     val p4 = Runnable {
         println("Runnable run2 ...")
     }
     p4.run()
 
-    // 对KT的接口 用   KT[对象表达式方式]  方式一
+    // 实现KT的接口 用   KT[对象表达式方式]  方式一
     object : RunnableKT {
         override fun run() {
             println("RunnableKT 方式一 run ...")
         }
     }.run()
 
-    // 对KT的接口 用   Java最简洁的方式 方式二
+    // 实现KT的接口 用   Java最简洁的方式 方式二 不行
     /*RunnableKT {
 
     }*/

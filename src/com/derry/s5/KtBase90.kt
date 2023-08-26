@@ -1,8 +1,7 @@
 package com.derry.s5
 
 // TODO 内部类
-// 内部类的特点： 内部的类 能访问 外部的类
-//              外部的类 能访问 内部的类
+// 内部类的特点： 内部的类 能访问 外部的类的成员
 class Body(_bodyInfo: String) { // 身体类
 
     val bodyInfo = _bodyInfo
@@ -33,11 +32,10 @@ class Body(_bodyInfo: String) { // 身体类
 
 // TODO 嵌套类
 // 默认情况下：就是嵌套类关系
-// 嵌套类特点：外部的类 能访问 内部的嵌套类
-//           内部的类 不能访问 外部类的成员
+// 嵌套类特点：外部的类 不能访问 内部的嵌套类成员，内部的类 也不能访问 外部类的成员
 class Outer {
 
-    val info: String  = "OK"
+    val info: String = "OK"
 
     fun show() {
         Nested().output()

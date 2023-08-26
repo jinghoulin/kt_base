@@ -13,15 +13,18 @@ object KtBase87 {
             System.out.println(var1);
         }
 
-        // 这个区域是 object 不同点：
+        // 这个区域是 object 的特点，kt的init代码块不主构造函数中实现，而是在java的static代码块中实现：
         static {
+            // 单例实例的创建
             KtBase87 var0 = new KtBase87();
             INSTANCE = var0;
+
+            // init{}的实现
             String var1 = "KtBase91 init...";
             ...
             System.out.println(var0);
         }
-
+        // 所以object的单例是饿汉式
      */
 
     init {

@@ -39,4 +39,6 @@ fun main() {
         // (p as Person2).myPrintln() // 因为子类重写了父类
         println((p as Person2).showName())
     }
+    // is：当编译器能保证变量在检测和使用之间不可改变时，智能转换才有效
+    // as：转换失败会抛异常；as?：转换失败会返回null
 }

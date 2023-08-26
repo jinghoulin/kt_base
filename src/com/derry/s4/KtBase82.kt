@@ -1,11 +1,12 @@
 package com.derry.s4
 
-class KtBase82 (_info: String) {
+class KtBase82(_info: String) {
     private val info = _info
 
-    val content : String = getInfoMethod()
+    val content: String = getInfoMethod()
 
-    // private val info = _info // 把这种 转换info的代码，写到最前面，这样保证，就不会出现这种问题
+    // 会空指针异常。因为生成的代码是，在主构造函数中按顺序进行字段赋值和init调用
+    // private val info = _info // 把这种 转换info的代码（字段赋值），写到最前面，这样保证，就不会出现这种问题
 
     private fun getInfoMethod() = info // 当此函数调用info变量的时候，你以为是赋值好了，但是还没有赋值
 }

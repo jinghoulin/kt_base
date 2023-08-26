@@ -1,7 +1,5 @@
 package com.derry.s5
 
-import kotlin.math.expm1
-
 open class Person3(val name: String) {
     private fun showName() = "父类显示:$name"
 
@@ -10,7 +8,7 @@ open class Person3(val name: String) {
     fun methodPerson() = println("我是父类的方法...") // 父类独有的函数
 }
 
-class Student3(val nameSub: String) : Person3 (nameSub) {
+class Student3(val nameSub: String) : Person3(nameSub) {
     override fun myPrintln() = println("子类显示:$nameSub")
 
     fun methodStudent() = println("我是子类的方法...") // 子类独有的函数
@@ -18,10 +16,11 @@ class Student3(val nameSub: String) : Person3 (nameSub) {
 
 // TODO 85.Kotlin语言的智能类型转换学习
 fun main() {
-    val p : Person3 = Student3("李四")
+    val p: Person3 = Student3("李四")
 
     (p as Student3).methodStudent()
 
+    // 不需要再转成Student3
     p.methodStudent()
 
     p.methodStudent()

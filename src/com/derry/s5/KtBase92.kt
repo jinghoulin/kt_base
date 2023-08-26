@@ -1,8 +1,8 @@
 package com.derry.s5
 
-data class KtBase92 (var name: String, var age: Int) // 主构造
+data class KtBase92(var name: String, var age: Int) // 主构造
 {
-    var coreInfo : String = ""
+    var coreInfo: String = ""
 
     init {
         println("主构造被调用了")
@@ -20,7 +20,7 @@ data class KtBase92 (var name: String, var age: Int) // 主构造
 }
 
 /* 生成的toString 为什么只有两个参数？
-   答：默认生成的toString 或者 hashCode equals 等等... 主管主构造，不管次构造
+   答：默认生成的toString 或者 hashCode equals 等等... 只管主构造，不管次构造
     public String toString() {
       return "KtBase92(name=" + this.name + ", age=" + this.age + ")";
     }
@@ -34,6 +34,6 @@ fun main() {
     val newP2 = p1.copy("李连杰", 78)
     println(newP2)
 
-    // copy toString hashCode equals 等等... 主管主构造，不管次构造
+    // 数据类生成的 copy toString hashCode equals 等等... 主管主构造，不管次构造
     // 注意事项：使用copy的时候，由于内部代码只处理主构造，所以必须考虑次构造的内容
 }

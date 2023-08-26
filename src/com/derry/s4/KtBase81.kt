@@ -5,6 +5,7 @@ class KtBase81 {
     val info: String
 
     init {
+        // 如果info在getInfoMethod()使用它之后才赋值，肯定空指针异常
         info = "DerryOK"
         getInfoMethod()
         // info = "DerryOK"
@@ -17,12 +18,6 @@ class KtBase81 {
 }
 
 // TODO 81.Kotlin语言的初始化陷阱二学习
-// 1.定义info
-// 2.init getInfo
-// 3.info = ""
 fun main() {
-    KtBase81().
-
-
-        getInfoMethod()
+    KtBase81().getInfoMethod()
 }
