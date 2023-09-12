@@ -1,6 +1,6 @@
 package com.derry.s5
 
-// KT想表达：枚举其实也是一个class，为什么，就是为了 枚举可以有更丰富的功能
+// KT想表达：枚举其实也是一个class，为什么，就是为了 枚举可以有更丰富的功能。详见KtBase96.kt
 enum class Week {
     星期一,
     星期二,

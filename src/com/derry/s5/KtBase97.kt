@@ -14,7 +14,8 @@ enum class Exam {
     //  需求：引出 密封类
 }
 
-class Teacher (private val exam: Exam) {
+// 说明构造函数用
+class Teacher(private val exam: Exam) {
     fun show() =
         when (exam) {
             Exam.Fraction1 -> "该学生分数很差"
