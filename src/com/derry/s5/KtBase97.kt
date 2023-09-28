@@ -14,7 +14,7 @@ enum class Exam {
     //  需求：引出 密封类
 }
 
-// 说明构造函数用
+// 枚举类也是类，枚举值作为参数值
 class Teacher(private val exam: Exam) {
     fun show() =
         when (exam) {

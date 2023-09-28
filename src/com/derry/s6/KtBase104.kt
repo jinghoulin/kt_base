@@ -3,7 +3,7 @@ package com.derry.s6
 // 1.万能对象返回器 Boolean来控制是否返回 运用 takeIf
 class KtBase104<T>(private val isR: Boolean, private val obj: T) {
 
-    fun getObj() : T? = obj.takeIf { isR }
+    fun getObj(): T? = obj.takeIf { isR }
 
 }
 
@@ -31,9 +31,10 @@ fun main() {
     println()
 
     // 3.对象打印 + run + ?:
-    val r : Any = KtBase104(true, stu1).getObj() ?.run {
+    // run 里面是this，返回最后一行
+    val r: Any = KtBase104(true, stu1).getObj()?.run {
         // 如果 getObj 返回有值，就会进来
-        // this == getObj本身
+        // this == getObj()本身
         println("万能对象是:$this") // 返回Unit
         545.4f // 返回Float
     } ?: println("大哥，你万能对象返回器，是返回null啊") // 返回Unit
@@ -42,11 +43,12 @@ fun main() {
     println()
 
     // apply特点：永远都是返回 getObj.apply  getObj本身
-    val r2 : Student = KtBase104(true, stu2).getObj().apply {  }!!
+    val r2: Student = KtBase104(true, stu2).getObj().apply { }!!// !! 放最后可以使返回类型从Student? 变成Student
     println("r2:$r2")
 
     // 4.对象打印 + apply + ?:
-    val r3: Teacher = KtBase104(true, tea1).getObj() .apply {
+    // apply 里面是this，返回this本身
+    val r3: Teacher = KtBase104(true, tea1).getObj().apply {
         // this == getObj本身
 
         if (this == null) {
@@ -74,7 +76,7 @@ fun main() {
 
 // 5.show(t: T) + also + ?:
 fun <B> show(item: B) {
-    item ?.also {
+    item?.also {
         // it == item本身
         println("万能对象是:$it")
     } ?: println("大哥，你万能对象返回器，是返回null啊")
@@ -83,12 +85,12 @@ fun <B> show(item: B) {
 fun <B> show2(item: B) {
     // var r0 = item
 
-    var r : B? = item ?.also {
-       if (it == null) {
-           println("大哥，你万能对象返回器，是返回null啊")
-       } else {
-           println("万能对象是:$it")
-       }
+    var r: B? = item?.also {
+        if (it == null) {
+            println("大哥，你万能对象返回器，是返回null啊")
+        } else {
+            println("万能对象是:$it")
+        }
     } ?: null
     println("show2: 你传递进来的r:$r")
 }

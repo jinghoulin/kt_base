@@ -1,11 +1,11 @@
 package com.derry.s6
 
-class KtBase103<T> (private val obj: T) { // 万能输出器
+class KtBase103<T>(private val obj: T) { // 万能输出器
     fun show() = println("万能输出器:$obj")
 }
 
-data class Student(val name: String , val age: Int, val sex: Char)
-data class Teacher(val name: String , val age: Int, val sex: Char)
+data class Student(val name: String, val age: Int, val sex: Char)
+data class Teacher(val name: String, val age: Int, val sex: Char)
 
 // TODO 103-Kotlin语言的定义泛型类
 // 1.定义 对象输出器 println(obj)
@@ -18,7 +18,7 @@ fun main() {
     val tea1 = Teacher("王五", 77, '男')
     val tea2 = Teacher("赵六", 89, '女')
 
-    KtBase103(stu1).show()
+    KtBase103<Student>(stu1).show()// 泛型会自动推断
     KtBase103(stu2).show()
     KtBase103(tea1).show()
     KtBase103(tea2).show()

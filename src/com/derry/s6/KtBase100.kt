@@ -4,27 +4,29 @@ interface IUSB {
     var usbVersionInfo: String // USB版本相关的信息
     var usbInsertDevice: String // USB插入的设备信息
 
-    fun insertUBS() : String
+    fun insertUSB(): String
 }
 
-// 鼠标UBS实现类
-class Mouse(override var usbVersionInfo: String = "USB 3.0",
-            override var usbInsertDevice: String = "鼠标接入了UBS口") :IUSB {
+// 鼠标USB实现类
+class Mouse(
+    override var usbVersionInfo: String = "USB 3.0",
+    override var usbInsertDevice: String = "鼠标接入了USB口"
+) : IUSB {
 
-    override fun insertUBS() = "Mouse $usbVersionInfo, $usbInsertDevice"
+    override fun insertUSB() = "Mouse $usbVersionInfo, $usbInsertDevice"
 }
 
 // 键盘USB实现类
 class KeyBoard : IUSB {
 
     override var usbVersionInfo: String = "USB 3.1"
-        // 下面的 set get 都会持有 field，现在是你没有给 usbVersionInfo 赋值， 意味着field是没法让set/get持有的
+        // 下面的 set get 都会持有 field，所以需要给 usbVersionInfo 初始化赋值， 否则field是没法让set/get持有的
         get() = field
         set(value) {
             field = value
         }
 
-    override var usbInsertDevice: String = "键盘接入了UBS口"
+    override var usbInsertDevice: String = "键盘接入了USB口"
         get() {
             println("@你get了[${field}]值出去了")
             return field
@@ -34,7 +36,7 @@ class KeyBoard : IUSB {
             println("@你set了[${value}]值进来了")
         }
 
-    override fun insertUBS(): String = "KeyBoard $usbVersionInfo, $usbInsertDevice"
+    override fun insertUSB(): String = "KeyBoard $usbVersionInfo, $usbInsertDevice"
 }
 
 // TODO 100-Kotlin语言的接口定义
@@ -43,13 +45,13 @@ class KeyBoard : IUSB {
 // 3.实现类不仅仅要重写接口的函数，也要重写 接口的成员
 // 4.接口实现代码区域，全部都要增加 override 关键字来修饰
 fun main() {
-    val iusb1 : IUSB = Mouse()
-    println(iusb1.insertUBS())
+    val iusb1: IUSB = Mouse()
+    println(iusb1.insertUSB())
 
     println()
 
     val iusb2: IUSB = KeyBoard()
-    println(iusb2.insertUBS())
+    println(iusb2.insertUSB())
 
     iusb2.usbInsertDevice = "AAA"
 }
