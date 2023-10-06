@@ -7,25 +7,27 @@ data class ObjectClass3(val name: String, val age: Int, val study: String)
 
 class KtBase112 {
 
-    // 所有的功能，写在函数上
+    // reified用于修饰泛型，需要使用在inline函数中。可在运行时得到泛型的具体类型，即java类型擦除后的还原，用于类型判断。
     // 默认随机输出一个对象，如果此对象和用户指定的对象不一致，我们就启用备用对象，否则就直接返回对象
-    inline fun <reified T> randomOrDefault(defaultLambdaAction: () -> T ) :T? {
-        val objList : List<Any> = listOf(ObjectClass1("obj1 李四", 22, "学习C"),
-                                         ObjectClass2("obj2 王五", 23, "学习C++"),
-                                         ObjectClass3("obj3 赵六", 24, "学习C#"))
+    inline fun <reified T> randomOrDefault(defaultLambdaAction: () -> T): T? {
+        val objList: List<Any> = listOf(
+            ObjectClass1("obj1 李四", 22, "学习C"),
+            ObjectClass2("obj2 王五", 23, "学习C++"),
+            ObjectClass3("obj3 赵六", 24, "学习C#")
+        )
 
-        val randomObj : Any? = objList.shuffled().first()
+        val randomObj: Any? = objList.shuffled().first()
 
         println("您随机产生的对象 幸运儿是:$randomObj")
 
-        // return randomObj.takeIf { it is T } as T ?: null     :T? {
+//        return randomObj.takeIf { it is T } as T ?: null// 返回类型是 :T?
 
-        // T  与  T?  是不同的 ？
-        // 答： it is T false  takeIf  null    null as T 崩溃了，解决思路： null as T?
+        // T  与  T?  是不同的
+        // 答： takeIf { it is T }若返回null，后面的 null as T 会报空指针异常，解决思路： null as T?
 
-        // 如果  it随机产生的对象 等于 T类型的，就会走 as T 直接返回了
-        return randomObj.takeIf { it is T } as T?  // null as T     null as T?
-            // 如果  it随机产生的对象 不等于 T类型的，就会走下面这个备用环节
+        // 如果  it即随机产生的对象 等于 T类型的，就会走 as T 直接返回了
+        return randomObj.takeIf { it is T } as T?  // null as T 会报空指针异常。所以是： null as T?
+        // 如果  it即随机产生的对象 不等于 T类型的，就会走下面这个备用环节
             ?: defaultLambdaAction()
     }
 

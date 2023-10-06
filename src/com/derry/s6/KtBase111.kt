@@ -1,13 +1,13 @@
 package com.derry.s6
 
-// in T  out T 声明处指定关系  声明处泛型  这个是Java没有的功能
+// in T  out T 泛型声明处就指定泛型的限定关系  这个是Java没有的功能
 
 // 整个 SetClass 里面的所有成员 泛型相关，只能修改 更改，
 //                                    不能获取人家 读取人家的
 // 小结：当我们 对这个整个类里面的泛型，只能修改 ，不能让外界读取时，可以声明 in T 逆变
 class SetClass<in T>() {
 
-    // 200个函数 这200个函数 对T只能修改，不能给外界读取
+    // 假设200个函数 这200个函数 对T只能修改，不能给外界读取
     // ...
 
     fun set1(item: T) {
@@ -43,12 +43,12 @@ class SetClass<in T>() {
 
 // 整个 GetClass 里面的所有成员 泛型相关，不能修改 更改，
 //                                    只能获取人家 读取人家的
-// 小结：当我们 对这个整个类里面的泛型，只能给读取 ，不能修改 更改，可以声明 out T 协变
+// 小结：当我们 对这个整个类里面的泛型，只能给外界读取 ，不能修改 更改，可以声明 out T 协变
 class GetClass<out T>(_item: T) {
 
     val item: T = _item
 
-    // 200个函数 这200个函数 对T只能读取，不能给外界修改 更改
+    // 假设200个函数 这200个函数 对T只能读取，不能给外界修改 更改
     // ...
 
     // 不能给外界修改 更改 (增加out后，不能给外界修改 更改，所以编译不通过)
@@ -84,14 +84,14 @@ class GetClass<out T>(_item: T) {
 
 // TODO 111-Kotlin语言中使用in和out
 fun main() {
-    // 逆变 in T  SetClass 只能修改 更改 不能给外界读取
+    // 逆变 in T  SetClass 只能修改 更改 不能给外界读取（只能传进来，不能传出去）
     val p1 = SetClass<String>()
     p1.set1("Derry")
     p1.set2("Kevin")
 
     println()
 
-    // 协变 out T GetClass 只能读取，不能修改 更改
+    // 协变 out T GetClass 只能读取，不能修改 更改（只能传出去，不能传进来）
     val p2 = GetClass("李四")
     println(p2.get1())
     val p3 = GetClass("王五")

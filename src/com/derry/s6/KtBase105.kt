@@ -8,10 +8,12 @@ class KtBase105<T>(val isMap: Boolean = false, val inputType: T) {
     inline fun <R> map(mapAction: (T) -> R) = mapAction(inputType).takeIf { isMap }
 }
 
-inline fun <I, O> map(inputValue : I , isMap: Boolean = true, mapActionLambda : (I) -> O) =
+// 参数或返回值中使用了lambda，都推荐声明为inline
+// 有默认值的参数，声明时尽量放后面。否则可能由于匹配错误而无法使用默认参数
+inline fun <I, O> map(inputValue: I, isMap: Boolean = true, mapActionLambda: (I) -> O) =
     if (isMap) mapActionLambda(inputValue) else null
 
-// TODO 105-Kotlin语言的泛型变换实战
+// TODO 105-Kotlin语言的泛型变换实战：模仿RxJava的map
 // 1.类 isMap map takeIf  map是什么类型
 // 2.map int -> str 最终接收是什么类型
 // 3.map per -> stu 最终接收是什么类型
@@ -19,7 +21,7 @@ inline fun <I, O> map(inputValue : I , isMap: Boolean = true, mapActionLambda : 
 fun main() {
 
     // 2.map int -> str 最终接收是什么类型
-    val p1 = KtBase105(isMap = /*true*/ false, inputType = 5434)
+    val p1 = KtBase105<Int>(isMap = /*true*/ false, inputType = 5434)
 
     val r = p1.map {
         it
@@ -38,7 +40,7 @@ fun main() {
 
     // 3.map per -> stu 最终接收是什么类型
     val p2 = KtBase105(true, Persons("李四", 99))
-    val r2 : Students? = p2.map {
+    val r2: Students? = p2.map {
         // it == Persons对象 == inputType
         it
         Students(it.name, it.age)
@@ -48,13 +50,13 @@ fun main() {
     println()
 
     // map函数 模仿RxJava变换操作
-    val r3 = map(123) {
+    val r3: String? = map(123) {
         it.toString()
         "map包裹[$it]" // lambda表达式最后一行，就是返回值
     }
     println(r3)
 
-    123.run {  }
+    123.run { }
 }
 
 data class Persons(val name: String, val age: Int)

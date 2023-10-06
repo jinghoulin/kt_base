@@ -19,23 +19,23 @@ class ConsumerClass3 : Consumer<Man> {
     }
 }
 
-class ConsumerrClass4 : Consumer<WoMan> {
-    override fun consumer(item: WoMan) {
+class ConsumerrClass4 : Consumer<Woman> {
+    override fun consumer(item: Woman) {
         println("消费者 WoMan")
     }
 }
 
 // TODO 110-Kotlin语言的in-逆变学习
 fun main() {
-    val p1 : Consumer<Man> = ConsumerClass1() // ConsumerClass1他本来就是 传递 Animal，居然也可以，因为in
-    val p2 : Consumer<WoMan> = ConsumerClass2() // ConsumerClass1他本来就是 传递 Humanity，居然也可以，因为in
+    val p1: Consumer<Man> = ConsumerClass1() // ConsumerClass1他本来就是 传递 Animal，居然也可以，因为in
+    val p2: Consumer<Woman> = ConsumerClass2() // ConsumerClass1他本来就是 传递 Humanity，居然也可以，因为in
 
-    // 默认情况下： 泛型具体出的父类  是不可以赋值给  泛型声明处的子类的
-    // in：泛型具体出的父类  是可以赋值给  泛型声明处的子类的
+    // 默认情况下： 泛型具体处的父类  是不可以赋值给  泛型声明处的子类的
+    // in：泛型具体处的父类  是可以赋值给  泛型声明处的子类的
 
     // 逆变：子类 泛型声明处  可以接收   父类 泛型具体处
 
 
-    // 协变：out 父类 = 子类
-    // 逆变：in  子类 = 父类
+    // 协变：out 父类 = 子类对象
+    // 逆变：in  子类 = 父类对象
 }
